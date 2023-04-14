@@ -1,0 +1,29 @@
+﻿
+
+input[type="radio"] + label {
+    display: inline-block;
+    max-width: 100%;
+    /*margin-bottom: 5px;*/
+    margin-left: 4px;
+    font-weight: normal;
+    margin-top:5px;
+}
+
+.Principal {
+    border: dotted;
+    padding: 20px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+  
+}
+
+td{text-align:center!important}
+
+.bootstrap_4t {
+    color: white !important;
+    background-color: brown !important
+}
+.overflow_4t {
+    overflow-y: scroll;
+    overflow-x: scroll;
+}

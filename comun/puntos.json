@@ -1,0 +1,20 @@
+﻿[
+    {
+		"Id":0,
+		"Title":"Unidad 0",
+        "Latitude": 22.3213,
+        "Longitude": -97.8534
+    },
+    {
+		"Id":1,
+		"Title":"Unidad 1",
+        "Latitude": 24.8545,
+        "Longitude": -98.1343
+    },
+    {
+		"Id":2,
+		"Title":"Unidad 2",
+        "Latitude": 27.4864,
+        "Longitude": -99.5081
+    }
+]

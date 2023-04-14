@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header
+{
+	background-color:blue;
+	width:200px;
+	text-align:center;
+}
+
+#content
+{
+	background-color:lightblue;
+	color:black;
+	width:200px;
+	text-align:center;	
+}
+
+#show
+{
+	display:none;	
+}

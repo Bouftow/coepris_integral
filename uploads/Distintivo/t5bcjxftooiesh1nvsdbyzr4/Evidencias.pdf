@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	Comisión Estatal para la Protección contra Riesgos Sanitarios
+</title><link rel="icon" href="../img/logo-coepris.png" /><link href="../css/bootstrap.min.css" rel="stylesheet" /><link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.1/css/fileinput.min.css" media="screen" rel="stylesheet" type="text/css" /><link href="../css/fileinput.css" media="screen" rel="stylesheet" type="text/css" /><link href="../css/all.css" rel="stylesheet" /><link href="../themes/explorer-fas/theme.css" media="screen" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="../css/app-blue.css" /><link rel="stylesheet" href="../css/style.css" /><link rel="stylesheet" href="../css/jquery.fancybox.min.css" /><link href="../css/sitio.css?v=${version}" media="screen" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    
+     
+    <style>
+        .card-block { border:none
+        }.card { border:none
+        }
+    </style>
+        
+    <style type="text/css">
+        @font-face {
+            font-family: 'Novecentowide-Bold';
+            font-size: 1000px;
+            src: url('../fonts/Novecentowide-Bold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HelveticaNeueLTStd-Bd';
+            src: url('../font/HelveticaNeueLTStd-Bd.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HelveticaNeueLTStd-Lt';
+            src: url('../fonts/HelveticaNeueLTStd-Lt.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .card-block {
+            border: none
+        }
+
+        .card {
+            border: none
+        }
+
+        .rbl input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .radioButtonList label {
+        }
+
+        .f {
+            margin-top: 7px
+        }
+
+        .tamaño {
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+   
+         
+       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/piexif.js"></script>
+        <script type="text/javascript" src="../js/plugins/sortable.js"></script>
+        <script type="text/javascript" src="../js/fileinput.js"></script>
+        <script type="text/javascript" src="../themes/fas/theme.js"></script>
+        <script type="text/javascript" src="../js/locales/fr.js"></script>
+        <script type="text/javascript" src="../js/locales/es.js"></script>
+        <script type="text/javascript" src="../themes/explorer-fas/theme.js"></script>
+        <script type="text/javascript" src="../js/0bf20ed0f4.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <form method="post" action="./gracias.aspx?id=gO1LU4B94ABKr0DxgZbdjA%3d%3d&amp;id_g=14" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM2NjgxNzA0MQ9kFgJmD2QWAgIBD2QWAgIED2QWAgIDDw8WAh4EVGV4dAWKATxiciAvPjxkaXYgY2xhc3M9ImFsZXJ0IGFsZXJ0LXN1Y2Nlc3MgIj4gU2UgaGEgZGVzY2FyZ2FkbyBlbCBhcmNoaXZvIHNhdGlzZmFjdG9yaWFtZW50ZSwgcG9yIGZhdm9yIHZlcmlmaWNhIHR1IGNhcnBldGEgZGUgZGVzY2FyZ2FzLjwvZGl2PmRkZJtL4hwU9Gymlyzy2QpKthvFaGbf" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/coepristam/WebResource.axd?d=UV3iPKa-WskKKqO9q_0564p-P2zbfC7Do9L3iLmGG7NbW99k2Y47WEk4SD2DL14AwKzon4aMPDY-wNJFdpowVVwZIeY1&amp;t=637453852754849868" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"es-MX","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"a. m.","Calendar":{"MinSupportedDateTime":"\/Date(-62135575200000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2049,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy hh:mm:ss tt","LongDatePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy","LongTimePattern":"hh:mm:ss tt","MonthDayPattern":"d \u0027de\u0027 MMMM","PMDesignator":"p. m.","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"hh:mm tt","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM\u0027 de \u0027yyyy","AbbreviatedDayNames":["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],"ShortestDayNames":["do.","lu.","ma.","mi.","ju.","vi.","sá."],"DayNames":["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],"AbbreviatedMonthNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""],"IsReadOnly":true,"NativeCalendarName":"calendario gregoriano","AbbreviatedMonthGenitiveNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthGenitiveNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""]},"eras":[1,"d. C.",null,0]};//]]>
+</script>
+
+<script src="/coepristam/ScriptResource.axd?d=sOhqQ2JYMJ67BgLgIvCQQJIerShhR3eOOLMfC5DFWRRRCttKI-xdfoCbVwuok6RyL663oPpa2ytsJsajzG8MLjHFGipgHjubBaRM-5nWi79hw07-hIuZcmcjseDYR0uJGBq75YxAlPsFqUH3osNHvbaefO1Ef3HJaorl_-vkB7OqapJS0&amp;t=363be08" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('Error al cargar el marco de trabajo de cliente ASP.NET Ajax.');
+//]]>
+</script>
+
+<script src="/coepristam/ScriptResource.axd?d=MsdNtOLwSZ8alMuStasBWXLprF5bMM77DHlApH0KU6ciB713fS8k0sVzS1YV3Xe3u4j8_K10yE0UShG1cLYQz_m-SoO0KQj1u2SoOQPCzmRCHHhZN76AK9RCUmUTRY9uJXUTDHf-bBuNZJPPGdiRRmdM9MdJq8avnDjIYNmKSSfgAtp80&amp;t=363be08" type="text/javascript"></script>
+        
+  
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+
+
+
+        <div class="main-wrapper">
+            <div class="app" id="app">
+                 <header class="header">
+                    <div class="header-block header-block-collapse hidden-lg-up">
+                        <button class="collapse-btn" onclick="return false;" id="sidebar-collapse-btn" style="display:none">
+                            <i class="fa fa-bars"></i>
+                        </button> 
+                    </div>
+                         
+
+                    <div class="header-block header-block-nav">
+                        <ul id="id_Menu_Perfil" class="nav-profile">
+                           
+                            <li class="profile dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                   
+                                    <span class="name">Ing. Palacios</span> <img src="../img/tam.jpg" id="imgAvatar" class="img" height="28" width="28" /></a>
+                                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    
+                                    
+                                    
+                                    <a class="dropdown-item " href="http://localhost/coepristam/admin"><i class="fa fa-gear icon"></i>Administrar </a><a class="dropdown-item " href="http://localhost/coepristam/Distintivo/admin"><i class="fa fa-gear icon"></i>Administrar </a>
+                                 
+                                    <div class="dropdown-divider"></div>
+                                    <a id="btnLogOff" class="dropdown-item" href="javascript:__doPostBack(&#39;ctl00$btnLogOff&#39;,&#39;&#39;)"><i class="fa fa-power-off icon"></i>Salir</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </header>
+                <aside id="aside" class="sidebar">
+                    <div class="sidebar-container">
+                        <div class="sidebar-header" style="">
+                            
+                            <div style="margin:1vw">
+                                <img src="../img/logo.png" href="default.aspx" />
+                            </div>
+                        </div>
+                        <nav class="menu">
+
+                            <ul id="sidebar-menu" class="nav metismenu" style="display:block">
+                                
+    <li class=""><a id='anchorfocus' href="http://localhost/coepristam/Distintivo/Default.aspx"><i class="fa fa-home "></i>&nbsp;Inicio</a></li><li class="disable"><a id='menu_registro' style='display:none' href="http://localhost/coepristam/Distintivo/Registro.aspx"><i class="fa fa-pencil-square-o"></i>&nbsp;Registro</a></li><li class="active"><a id='menu_gracias' style='display:none' href="http://localhost/coepristam/Distintivo/Gracias.aspx"><i class="fa fa-check-circle"></i>&nbsp;¡Gracias!</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                </aside>
+
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+                
+                <article class="content items-list-page">
+                    <section class="section">
+                        <h2 class="text-center">Comisión Estatal para la Protección contra Riesgos Sanitarios</h2>
+                        <div class="alert alert-warning alert-dismissable" style="display:none;">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close" style="margin-right:20px;">&times;</a>
+                            <strong><i class="fa fa-warning"></i>&nbsp;AVISO IMPORTANTE:</strong><br />
+                            Por cuestiones de mantenimiento, el Sistema estará fuera de servicio el día de hoy a partir de las 00:00 hrs y hasta las 00:00 hrs del mismo día. 
+                            Agradecemos su comprensión durante este lapso de tiempo. <br />Cualquier duda, favor de comunicarse al área de sistemas para mas información.
+                        </div>
+                    
+    <script type="text/javascript" language="javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+
+
+    </script>
+   
+
+    <input type="text" value="0" id="hidden" style="display:none" />
+    <input name="ctl00$cphContent$Gise" type="text" id="cphContent_Gise" style="display:none" />
+    <span id="cphContent_LblMsg"><br /><div class="alert alert-success "> Se ha descargado el archivo satisfactoriamente, por favor verifica tu carpeta de descargas.</div></span>
+    <div class="col-sm-12">
+        <button onclick="__doPostBack('ctl00$cphContent$btnPDF','')" id="btnPDF" class="btn btn-secondary"><i class="fa fa-download"></i>&nbsp;Descargar Acuse</button>
+    </div>
+    
+  
+
+    <div class="col-sm-12">
+        <div style="text-align: center;" class="alert alert-primary header-block">
+            <p style="font-family: Novecentowide-Bold; font-size: 40px; color: white;">¡Gracias por tu registro!</p>
+            <p style="font-family: HelveticaNeueLTStd-Lt; font-size: 25px; color: white;">Pronto la COEPRIS estará dando seguimiento a tu solicitud</p>
+            <p style="font-family: HelveticaNeueLTStd-Lt; font-size: 18px; color: white; text-align: center">Recuerda que debes cumplir tus responsabilidades como establecimiento</p>
+            
+
+
+        </div>
+    </div>
+    <div class="modal fade" id="ModalSolLicSan" tabindex="-1" role="dialog" aria-labelledby="ModalSolLicSanlabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header jus">
+                    <h5 class="modal-title" id="ModalSolLicSanlabel">Registro de establecimientos seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <span id="cphContent_lblErrorModal">No se ha podido recuperar el número de registro de su solicitud y será redirigido a la página de inicio</span>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+
+                        <div class="col text-center">
+                            <button onclick="__doPostBack('ctl00$cphContent$btn_registro','')" id="cphContent_btn_registro" type="button" class="btn btn-success ">Regresar a inicio</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="Modal_Registrar_Otro" tabindex="-1" role="dialog" aria-labelledby="Modal_Registrar_Otro_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header jus">
+                    <h5 class="modal-title" id="Modal_Registrar_Otro_label">Registro de escuela segura</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <span id="cphContent_Label1">Muchas gracias por completar el registro, si desea capturar otros niveles educativos, de clic en el botón de abajo</span>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+
+                        <div class="col text-center">
+                            <button onclick="__doPostBack('ctl00$cphContent$btn_regresar','')" id="cphContent_btn_regresar" type="button" class="btn btn-success">Capturar otra escuela</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    </section>
+                </article>
+                <footer class="footer">
+                    <div class="footer-block buttons">
+                        Todos los derechos reservados &copy;&nbsp;2021
+                    </div>
+                    <div class="footer-block author">
+                        <ul>
+                           
+                        </ul>
+                    </div>
+                </footer>
+               
+            </div>
+        </div>
+
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="34106CE3" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAb0TknY0TGQ2+9Mtn/6r5tRjOU5x6bju/WoO8Tw/TIBVtSd2uyC7cHd/gqBZMVwez6+D8Fj82VjpEdqn4Pz3U33x8RQvARIWv0LJoAxezMlTVH88M+CTF0PkTFuAxS8UrkTjvRxjMFtA0/BuQL59lwWDFcfhA==" />
+</div></form>
+    
+
+
+   
+
+    
+    <script type="text/javascript">
+        $("#menu_gracias").show();
+        //$("#menu_registro").show();
+    </script>
+    <script>
+        $('#ModalSolLicSan').on('hide.bs.modal', function (e) { window.location.replace("default.aspx"); })
+    </script>
+  
+    <script>
+        //if (!$.cookie("DescargarArchivo")) {
+        //    // do your stuff
+
+        //    // set cookie now
+        //    $.cookie("DescargarArchivo", "Descargado", { "expires": 7 })
+        //}
+
+
+        //$('#btnPDF').click(); 
+
+        $("#btnPDF").click(function () {
+            if ($("#cphContent_Gise").val() == "") {
+            $("#cphContent_LblMsg").append(" <div class='alert alert-success'>Se ha descargado el archivo satisfactoriamente, por favor verifica tu carpeta de descargas.</div >");
+                $("#cphContent_Gise").val("1");
+            }
+            });
+
+
+
+    </script>
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;  
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+    </script>
+    <script>
+        var id_g = getUrlParameter('id_g');
+        //alert(id_g);
+        if (id_g == 14) {
+            $('#Modal_Registrar_Otro').modal("show");
+        }
+    </script>
+  
+
+
+    <div id="modalErrMsg" class="modal fade modal-danger" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header modal-header-danger">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><i class="fa fa-warning" ></i>&nbsp;Información del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modalErrMsgText"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script></body>
+
+
+<script>
+
+   
+</script>
+<script>
+  
+</script>
+
+
+    <script type="text/javascript">
+        var mod = function () {
+            if (Modernizr.mq('(max-width: 991px)')) {
+
+                $("#sidebar-collapse-btn").show();
+                $("#sidebar-collapse-btn").on('click', function () {
+                    $("#aside").css("left", "0px");
+                    $('#anchorfocus').focus();
+
+                    $("#anchorfocus").focusout(function () {
+                        if ($("sidebar-collapse-btn").css("display", "block")) { $("#aside").css("left", "-230px"); }
+
+                    });
+                });
+                
+                
+               
+            } else {
+                $("#aside").css("left", "");
+                $("#sidebar-collapse-btn").hide();
+                
+                
+                mod();//SI DESCOMENTAS ESTA LINEA, JALA but error de autollamarse mucho
+                // Clear the settings etc
+                //$("#secondary").removeClass("small").css("margin", "");   // <<< whatever the other margin value should be goes here
+                
+            }
+        }
+
+        // Shortcut for $(document).ready()
+        $(function () {
+            
+            // Call on every window resize
+            $(window).resize(mod);
+            // Call once on initial load
+            mod();
+        });
+    </script>
+  
+ </html>
