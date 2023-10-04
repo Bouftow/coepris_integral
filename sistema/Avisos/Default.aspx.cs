@@ -680,7 +680,7 @@ public partial class sistema_Avisos_Captura : System.Web.UI.Page
         cnn.ConnectionString = Principal.CnnStr0;
         cnn.Open();
         SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "select * from gestori_CopiaVieja.bitaseg.AvFunc_Avisos";
+        cmd.CommandText = "select * from bitaseg.AvFunc_Avisos";
         cmd.Connection = cnn;
         DataTable dt = new DataTable();
         SqlDataAdapter da = new SqlDataAdapter(cmd);

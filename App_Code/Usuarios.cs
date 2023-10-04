@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Salud.Tamaulipas;
 using System.Text;
 using System.Web.UI;
+using System.Configuration;
 /// <summary>
 /// Descripción breve de UsersADH
 /// </summary>
@@ -815,10 +816,15 @@ public class Usuarios : Users
     //}
     public override void DatosDeRegistro(string user_login)
     {
-
         SqlConnection cnn = new SqlConnection(Principal.CnnStr0);
         try
         {
+            if (string.IsNullOrEmpty(Principal.CnnStr0))
+            {
+                // La cadena de conexión no se encuentra en el archivo de configuración
+                throw new ConfigurationErrorsException("La cadena de conexión 'dbCnnStr' no se ha configurado correctamente.");
+            }
+
             cnn.Open();
             SqlCommand cmd = new SqlCommand
             {
@@ -887,10 +893,16 @@ public class Usuarios : Users
             dr.Close();
 
         }
+        //catch (ConfigurationErrorsException ex)
+        //{
+        //    Console.WriteLine("Error de configuración: " + ex.Message);
+        //}
         catch (Exception ex)
         {
+
             throw (ex);
         }
+        
         finally
         {
             cnn.Close();

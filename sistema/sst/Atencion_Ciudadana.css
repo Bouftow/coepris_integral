@@ -11,10 +11,10 @@ input[type="radio"] + label {
 
 .Principal {
     border: dotted;
-    padding: 20px;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-  
+    padding: 10px;
+    margin: 10px;
+   /* white-space: nowrap;
+    text-overflow: ellipsis;*/
 }
 
 td{text-align:center!important}
@@ -24,6 +24,27 @@ td{text-align:center!important}
     background-color: brown !important
 }
 .overflow_4t {
+    height:400px;
     overflow-y: scroll;
     overflow-x: scroll;
+}
+
+.contenedor-de-tabla-modal {
+    max-width: 100%;
+    overflow-x: auto;
+    min-width: 300px; /* Establece el ancho mínimo para que aparezca la barra de desplazamiento horizontal */
+}
+
+.tabla-modal {
+    width: auto;
+    min-width: 100%; /* Establece el ancho mínimo de la tabla */
+}
+.no-select {
+    user-select: none;
+}
+
+.deshabilitar-visualmente {
+    background-color: #f5f5f5; /* Cambia el color de fondo a un gris claro */
+    color: #777; /* Cambia el color del texto a un gris más claro */
+    pointer-events: none; /* Evita que se pueda hacer clic en el campo */
 }

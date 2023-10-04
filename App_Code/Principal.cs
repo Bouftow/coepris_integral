@@ -18,7 +18,7 @@ public class Principal
     {
         get
         {
-            return (ConfigurationManager. ConnectionStrings["dbCnnStr"].ConnectionString);
+            return (ConfigurationManager.ConnectionStrings["dbCnnStr"].ConnectionString);
         }
     }
     
