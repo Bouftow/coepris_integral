@@ -705,7 +705,7 @@
                             </div>
                             <div class="col">
                                 <label>Tipo de Solicitud</label>
-                                <asp:DropDownList CssClass="form-select text-uppercase" runat="server" DataSourceID="SqlDataSource_Solicitudes" DataTextField="solicitud" DataValueField="id_tipo_solicitud" AppendDataBoundItems="True">
+                                <asp:DropDownList ID="ddl_busqueda_tipo_solicitud" CssClass="form-select text-uppercase" runat="server" DataSourceID="SqlDataSource_Solicitudes" DataTextField="solicitud" DataValueField="id_tipo_solicitud" AppendDataBoundItems="True">
                                     <asp:ListItem Value="-1" Selected="True">-- Selecciona --</asp:ListItem>
                                 </asp:DropDownList>
 
@@ -769,29 +769,17 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Buscar por Beneficiario
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Buscar por Solicitante
-                                    </label>
-                                </div>
+                            <div class="col">
+                                <asp:RadioButtonList ID="radio_tipodebusqueda" runat="server">
+                                    <asp:ListItem Text="Buscar por Beneficiario" Value="0" Selected="True" />
+                                    <asp:ListItem Text="Buscar por Solicitante" Value="1" />
+                                </asp:RadioButtonList>
                             </div>
                         </div>
-
-
-                          <div class="text-center" style="margin: 10px">
+                        <div class="text-center" style="margin: 10px">
                         
                               <asp:Button ID="btn_busqueda" class="btn btn-secondary-outline bootstrap_4t" runat="server" CausesValidation="false" Text="Buscar" OnClick="btn_busqueda_Click"  />
                     </div>
-
-                      
 
                         <asp:UpdatePanel ID="upnlGridView" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
                             <ContentTemplate>

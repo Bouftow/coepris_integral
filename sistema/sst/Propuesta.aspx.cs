@@ -30,6 +30,9 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
         if (!IsPostBack)
         {
 
+        
+
+
             HttpCookie cookie = Request.Cookies["tabActivo"];
 
             if (cookie != null)
@@ -74,6 +77,48 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
                 }
 
                 reader.Close();
+            }
+            div_gridview.Visible = true;
+            try
+            {
+                DateTime hoy = DateTime.Today;
+                DateTime fechaInicio = hoy.Date; // Establece la fecha de inicio a las 00:00
+                DateTime fechaFin = hoy.Date.AddHours(23).AddMinutes(59).AddSeconds(59); // Establece la fecha de fin a las 23:59:59
+
+                SqlConnection cnn = new SqlConnection();
+                cnn.ConnectionString = Principal.CnnStr0;
+                cnn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "sst_atn.buscador";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@origen", SqlDbType.Int).Value = Convert.ToInt32(ddl_origen_busqueda.SelectedValue);
+                cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = fechaInicio;
+                cmd.Parameters.Add("@fecha_final", SqlDbType.DateTime).Value = fechaFin;
+                cmd.Parameters.Add("@curp", SqlDbType.NVarChar).Value = txtbusquedaporcurp.Text;
+                cmd.Parameters.Add("@tipo_solicitud", SqlDbType.Int).Value = Convert.ToInt32(ddl_busqueda_tipo_solicitud.SelectedValue);
+                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = txtbusquedanombre.Text;
+                cmd.Parameters.Add("@primer_apellido", SqlDbType.NVarChar).Value = txtbusquedaprimerapellido.Text;
+                cmd.Parameters.Add("@segundo_apellido", SqlDbType.NVarChar).Value = txtbusquedasegundoapellido.Text;
+                cmd.Parameters.Add("@tipodebusqueda", SqlDbType.Int).Value = Convert.ToInt32(radio_tipodebusqueda.SelectedValue);
+                cmd.Connection = cnn;
+
+                DataTable dtCAN = new DataTable();
+                SqlDataAdapter daCAN = new SqlDataAdapter(cmd);
+                daCAN.Fill(dtCAN);
+                grdBusqueda.DataSource = dtCAN;
+                grdBusqueda.DataSource = dtCAN;
+                grdBusqueda.ShowFooter = false;
+                grdBusqueda.DataBind();
+                cnn.Close();
+            }
+
+            catch (Exception Ex)
+            {
+
+
+                lblError.Text = Ex.Message;
             }
         }
     }
@@ -306,6 +351,7 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
 
     protected void grdBusqueda_RowDataBound(object sender, GridViewRowEventArgs e)
     {
+
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             e.Row.Cells[0].Visible = false; //Index del Row
@@ -315,6 +361,7 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
         {
             e.Row.Cells[0].Visible = false; ///index
         }
+       
     }
 
     //protected void btnModificarObservaciones_Click(object sender, EventArgs e)
@@ -403,6 +450,12 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
             cmd.Parameters.Add("@origen", SqlDbType.Int).Value = Convert.ToInt32(ddl_origen_busqueda.SelectedValue);
             cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_inicial.Text);
             cmd.Parameters.Add("@fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_final.Text);
+            cmd.Parameters.Add("@curp", SqlDbType.NVarChar).Value = txtbusquedaporcurp.Text;
+            cmd.Parameters.Add("@tipo_solicitud", SqlDbType.Int).Value = Convert.ToInt32(ddl_busqueda_tipo_solicitud.SelectedValue);
+            cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = txtbusquedanombre.Text;
+            cmd.Parameters.Add("@primer_apellido", SqlDbType.NVarChar).Value = txtbusquedaprimerapellido.Text;
+            cmd.Parameters.Add("@segundo_apellido", SqlDbType.NVarChar).Value = txtbusquedasegundoapellido.Text;
+            cmd.Parameters.Add("@tipodebusqueda", SqlDbType.Int).Value = Convert.ToInt32(radio_tipodebusqueda.SelectedValue);
             cmd.Connection = cnn;
 
             DataTable dtCAN = new DataTable();
@@ -422,4 +475,11 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
             lblError.Text = Ex.Message;
         }
     }
+
+    protected void btnUpdateTrigger_Load(object sender, EventArgs e)
+    {
+
+    }
+
+   
 }
