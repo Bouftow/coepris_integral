@@ -67,15 +67,16 @@
                 <strong><label class="text-center align-middle text-uppercase" id="ModalLabelConDescripcion"></label></strong>
                     <table style="margin-top:5px" id="historialTable" class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <%--<th>ID Historial</th>--%>
                                 <th>Observaciones</th>
                                 <th>Estatus</th>
+                                <th>Fecha</th>
                             </tr>
                             <tr>
                             </tr>
                         </thead>
-                        <tbody id="historialTableBody">
+                        <tbody  id="historialTableBody">
                             <!-- Aquí se mostrarán los datos -->
                         </tbody>
                     </table>
@@ -87,8 +88,9 @@
                             <tr>
                                 <th>Observaciones</th>
                                 <th>Estatus</th>
-                                <th></th>
-                                <!-- Columna sin título -->
+                                <th>Fecha de Registro</th>
+                                
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -687,7 +689,7 @@
                         <div class="row">
                             <div class="col" style="margin: 1% 1% 1% 0">
                                 <label>Tipo de Registro</label>
-                                <asp:DropDownList ID="ddl_origen_busqueda" EnableViewState="true" Style="text-overflow: ellipsis" CssClass="form-select text-uppercase" runat="server" AutoPostBack="true" DataSourceID="SqlDataSource_Origenes2" DataTextField="origen" DataValueField="id_origen" AppendDataBoundItems="True" OnSelectedIndexChanged="ddl_origen_busqueda_SelectedIndexChanged">
+                                <asp:DropDownList ID="ddl_origen_busqueda" EnableViewState="true" Style="text-overflow: ellipsis" CssClass="form-select text-uppercase" runat="server"  DataSourceID="SqlDataSource_Origenes2" DataTextField="origen" DataValueField="id_origen" AppendDataBoundItems="True">
                                     <asp:ListItem Value="-1" Selected="True">-- Selecciona --</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource_Origenes2" runat="server" ConnectionString="<%$ ConnectionStrings:dbCnnStr %>" SelectCommand="select * from sst_atn.origen"></asp:SqlDataSource>
@@ -751,11 +753,45 @@
                             </div>
                         </div>
 
-                        <%--  <div class="text-center" style="margin: 10px">
-                        <button type="button" class="btn btn-secondary-outline bootstrap_4t" runat="server" onserverclick="Button_Click">Buscar</button>
-                    </div>--%>
+                        <div class="row">
 
-                        <hr />
+                            <div class="col-sm-4">
+                                <label>Fecha Inicial:&nbsp;</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control text-uppercase" runat="server" ID="fecha_inicial" TextMode="Date"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Fecha Final:&nbsp;</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control text-uppercase" runat="server" ID="fecha_final" TextMode="Date"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Buscar por Beneficiario
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Buscar por Solicitante
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                          <div class="text-center" style="margin: 10px">
+                        
+                              <asp:Button ID="btn_busqueda" class="btn btn-secondary-outline bootstrap_4t" runat="server" CausesValidation="false" Text="Buscar" OnClick="btn_busqueda_Click"  />
+                    </div>
+
+                      
 
                         <asp:UpdatePanel ID="upnlGridView" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
                             <ContentTemplate>
@@ -896,6 +932,7 @@
                 dataType: 'json', // Tipo de dato esperado (lista de objetos JSON)
 
                 success: function (data) {
+
                     // Llena la tabla con los datos recibidos
                     var historialTable = $('#historialTable tbody');
                     historialTable.empty(); // Limpia la tabla antes de llenarla
@@ -904,7 +941,7 @@
 
                     // Itera a través de los datos recibidos y agrega filas a la tabla
                     $.each(data.d, function (index, item) {
-                        var row = '<tr><td>' + item.observaciones + '</td><td>' + item.estatus + '</td></tr>';
+                        var row = '<tr><td>' + item.observaciones + '</td><td>' + item.estatus + '</td><td>' + item.fecha_reg + '</td></tr>';
                         //var row = '<tr><td>' + item.id_historial_observaciones + '</td><td>' + item.observaciones + '</td><td>' + item.estatus + '</td></tr>';
                         historialTable.append(row);
                     });
@@ -987,7 +1024,7 @@
         });
     </script>
 
-
+  
     <script>
 
         function BuscarDatosCURP_SOL() {
@@ -1139,9 +1176,6 @@
                 });
             }
         }
-
-    </script>
-    <script>
         function numbersonly(e) {
             var unicode = e.charCode ? e.charCode : e.keyCode
             if (unicode != 8 && unicode != 44) {
@@ -1149,14 +1183,10 @@
                 { return false } //disable key press    
             }
         }
-    </script>
-    <script>
         function xxx(s) {
             var rgx = /^[0-9]*\.?[0-9]*$/;
             return s.match(rgx);
         }
-    </script>
-    <script>
         function solonumerosypunto(event) {
             // Obtener el código ASCII del carácter ingresado
             var charCode = event.which ? event.which : event.keyCode;
@@ -1189,30 +1219,6 @@
                 }
             }
         }
-
-    </script>
-    <%--<script runat="server">
-
-        void Selection_Change(Object sender, EventArgs e)
-        {
-
-            Object selectedItem = ddl_Mun.SelectedValue;
-            String str = selectedItem.ToString();
-            hdn_id_mun.Value = str;
-        }
-
-        void Selection_Change2(Object sender, EventArgs e)
-        {
-
-            Object selectedItem = ddl_mun_varios.SelectedValue;
-            String str = selectedItem.ToString();
-            hdn_id_mun.Value = str;
-            //Response.Write(str  + "<br>");
-
-        }
-    </script>--%>
-
-    <script>
         function myFunction() {
             var x = document.getElementById("<%=txtCosto.ClientID%>").value;
 
@@ -1235,13 +1241,18 @@
     </script>
     <script>
         $(document).ready(function () {
+
             // Verificar si es un postback y si el control específico ha cambiado
             if (!<%= Page.IsPostBack.ToString().ToLower() %> ) {
                 var fechaInicio = new Date(1980, 0, 1).toISOString().split("T")[0];
                 $('#<%= date_fecha_nac_sol.ClientID %>').val(fechaInicio);
                 $('#<%= date_fecha_nac_pac.ClientID %>').val(fechaInicio);
             }
+
+          
         });
+
+
     </script>
 
     <script> 
@@ -1323,9 +1334,25 @@
                     //alert(id_solicitud);
 
                     // Obtener los valores del texto y el selector de estatus
-                    var observaciones = $('#txtObservaciones1').val();
+                    var observaciones = $('#txtObservaciones1').val().toUpperCase();
                     var estatusValue = $('#ddlEstatus1').val();
                     var estatusText = $('#ddlEstatus1 option:selected').text(); // Obtener el texto seleccionado
+
+                    var fechaHoraActual = new Date();
+
+                  
+                    var año = fechaHoraActual.getFullYear();
+                    var mes = (fechaHoraActual.getMonth() + 1).toString().padStart(2, '0');
+                    var dia = fechaHoraActual.getDate().toString().padStart(2, '0');
+                    var horas = fechaHoraActual.getHours().toString().padStart(2, '0');
+                    var minutos = fechaHoraActual.getMinutes().toString().padStart(2, '0');
+                    var segundos = fechaHoraActual.getSeconds().toString().padStart(2, '0');
+
+                 
+                    var fecha_reg = `${año}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+
+                   
+
 
                     // Validar que se haya ingresado una observación
                     if (observaciones.trim() === '') {
@@ -1362,6 +1389,7 @@
                     var newRow = '<tr>' +
                         '<td>' + observaciones + '</td>' +
                         '<td>' + estatusText + '</td>' +
+                        '<td>' + fecha_reg + '</td>' +
                         '</tr>';
                     // Agregar la nueva fila a la tabla de historial
                     $('#historialTable tbody').append(newRow);

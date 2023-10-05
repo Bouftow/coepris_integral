@@ -182,7 +182,7 @@ public partial class sistema_sst_Metodos : System.Web.UI.Page
             connection.Open();
 
             // Consulta SQL para obtener el historial de observaciones
-            string sql = "SELECT ho.id_solicitud, ho.id_historial_observaciones, ho.observaciones, e.estatus , s.solicitud FROM sst_atn.historial_observaciones ho INNER JOIN sst_atn.estatus e ON ho.id_estatus = e.id_estatus INNER JOIN sst_atn.solicitudes s on ho.id_solicitud = s.id_solicitud  WHERE ho.id_solicitud = @idSolicitud order by ho.id_historial_observaciones";
+            string sql = "SELECT ho.fecha_reg, ho.id_solicitud, ho.id_historial_observaciones, ho.observaciones, e.estatus , s.solicitud FROM sst_atn.historial_observaciones ho INNER JOIN sst_atn.estatus e ON ho.id_estatus = e.id_estatus INNER JOIN sst_atn.solicitudes s on ho.id_solicitud = s.id_solicitud  WHERE ho.id_solicitud = @idSolicitud order by ho.id_historial_observaciones";
 
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@idSolicitud", idSolicitud);
@@ -193,12 +193,16 @@ public partial class sistema_sst_Metodos : System.Web.UI.Page
             {
                 while (reader.Read())
                 {
+                    DateTime fechaReg = (DateTime)reader["fecha_reg"];
+                    string fechaFormateada = fechaReg.ToString("yyyy-MM-dd HH:mm:ss");
+
                     historial.Add(new
                     {
                         id_historial_observaciones = reader["id_historial_observaciones"],
                         observaciones = reader["observaciones"],
                         estatus = reader["estatus"],
                         solicitud = reader["solicitud"],
+                        fecha_reg = fechaFormateada
                     });
                 }
             }

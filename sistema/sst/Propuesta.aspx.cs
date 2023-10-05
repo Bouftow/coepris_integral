@@ -48,8 +48,13 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
             div_adscripcion.Visible = false;
             div_gridview.Visible = false;
 
-            // Establecer la cadena de conexión a tu base de datos SQL Server
+            fecha_inicial.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime fechaHoy = DateTime.Now;
+            DateTime ultimoDiaDelMes = new DateTime(fechaHoy.Year, fechaHoy.Month, DateTime.DaysInMonth(fechaHoy.Year, fechaHoy.Month));
+            fecha_final.Text = ultimoDiaDelMes.ToString("yyyy-MM-dd");
 
+
+            // Establecer la cadena de conexión a tu base de datos SQL Server
             using (SqlConnection connection = new SqlConnection(Principal.CnnStr0))
             {
                 connection.Open();
@@ -285,64 +290,7 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
 
     }
 
-    protected void ddl_origen_reportes_SelectedIndexChanged(object sender, EventArgs e) 
-    {
 
-    }
-    protected void ddl_origen_busqueda_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        div_gridview.Visible = true;
-        try
-        {
-            SqlConnection cnn = new SqlConnection();
-            cnn.ConnectionString = Principal.CnnStr0;
-            cnn.Open();
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Connection = cnn;
-            //cmd.CommandText = "bitaseg.proc_RptGsln";
-            //cmd.Parameters.Add("@fecha1", SqlDbType.DateTime).Value = Convert.ToDateTime(Fecha1.Text);
-            //cmd.Parameters.Add("@fecha2", SqlDbType.DateTime).Value = Convert.ToDateTime(Fecha2.Text);
-            //var coord = DropDownList1.SelectedValue;
-            //if (DropDownList1.SelectedValue == "-1") { cmd.Parameters.Add("@coordinacion", SqlDbType.Int).Value =0; }
-            //else { cmd.Parameters.Add("@coordinacion", SqlDbType.Int).Value = DropDownList1.SelectedValue; }
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "sst_atn.buscador";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@origen", SqlDbType.Int).Value = Convert.ToInt32(ddl_origen_busqueda.SelectedValue);
-
-
-            //        //    SqlDataReader dr = cmd.ExecuteReader();
-
-            cmd.Connection = cnn;
-
-            DataTable dtCAN = new DataTable();
-            SqlDataAdapter daCAN = new SqlDataAdapter(cmd);
-            daCAN.Fill(dtCAN);
-            grdBusqueda.DataSource = dtCAN;
-
-
-            grdBusqueda.DataSource = dtCAN;
-            //dtCAN.Rows.OfType<DataRow>().ToList().ForEach(f => f.SetField("monto", String.Concat("$", f["monto"])));
-            grdBusqueda.ShowFooter = false;
-
-
-            grdBusqueda.DataBind();
-            cnn.Close(); // siempre cerrar conexiones.
-
-
-
-        }
-
-        catch (Exception Ex)
-        {
-
-
-            lblError.Text = Ex.Message;
-        }
-
-    }
     [System.Web.Services.WebMethod]
     public static string BuscarCURPlinea(string curp)
     {
@@ -437,5 +385,41 @@ public partial class sistema_sst_Propuesta : System.Web.UI.Page
         }
 
         upnlGridView.Update();
+    }
+
+    protected void btn_busqueda_Click(object sender, EventArgs e)
+    {
+        div_gridview.Visible = true;
+        try
+        {
+            SqlConnection cnn = new SqlConnection();
+            cnn.ConnectionString = Principal.CnnStr0;
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "sst_atn.buscador";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@origen", SqlDbType.Int).Value = Convert.ToInt32(ddl_origen_busqueda.SelectedValue);
+            cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_inicial.Text);
+            cmd.Parameters.Add("@fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_final.Text);
+            cmd.Connection = cnn;
+
+            DataTable dtCAN = new DataTable();
+            SqlDataAdapter daCAN = new SqlDataAdapter(cmd);
+            daCAN.Fill(dtCAN);
+            grdBusqueda.DataSource = dtCAN;
+            grdBusqueda.DataSource = dtCAN;
+            grdBusqueda.ShowFooter = false;
+            grdBusqueda.DataBind();
+            cnn.Close();
+        }
+
+        catch (Exception Ex)
+        {
+
+
+            lblError.Text = Ex.Message;
+        }
     }
 }
